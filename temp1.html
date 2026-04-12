@@ -76,16 +76,6 @@
             border-radius: 8px;
         }
 
-        .social-link {
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .social-link:hover {
-            color: #ffd54f !important;
-            /* gold hover */
-        }
-
         .toggle-btn {
             position: fixed;
             top: 20px;
@@ -110,52 +100,41 @@
 
 <body>
 
+    <!-- DARK MODE -->
+    <button class="btn btn-dark toggle-btn" onclick="toggleDarkMode()">🌙</button>
+
     <div class="container mt-4">
 
         <!-- HEADER -->
-        <div class="header d-flex flex-column flex-md-row align-items-center">
-            <img src="images/passport-raa.png" class="profile-img me-md-4 mb-3 mb-md-0">
+        <div class="header d-flex flex-column flex-md-row align-items-center" data-aos="fade-down">
+            <img src="images/passport-raa.png" class="profile-img me-md-4 mb-3">
             <div>
                 <h2>Dr. Rustam Ali Ahmed</h2>
                 <p>Ph.D. (Computer Science & Engineering)</p>
                 <p>Director – RWorld Computer Solutions (OPC) Pvt. Ltd.</p>
                 <p>
-                    <i class="fas fa-map-marker-alt"></i> Assam, India |
                     <i class="fas fa-phone"></i> +91 7002453818 |
                     <i class="fas fa-envelope"></i> ahmed.rustam77@gmail.com
                 </p>
-                <div class="contact-info mt-2">
 
-                    <a href="https://www.linkedin.com/in/dr-rustam-ahmed-61938949" target="_blank"
-                        class="me-3 text-white text-decoration-none social-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-
-                    <a href="https://github.com/rustamtu?tab=repositories" target="_blank"
-                        class="text-white text-decoration-none social-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-
-                </div>
                 <a href="#" onclick="window.print()" class="btn btn-light mt-2">
                     <i class="fas fa-download"></i> Download PDF
                 </a>
+
             </div>
         </div>
 
         <!-- SUMMARY -->
-        <div class="card p-4">
+        <div class="card p-4" data-aos="fade-up">
             <h5 class="section-title">Profile Summary</h5>
             <p>
                 Experienced Computer Science academician with 19+ years of teaching, research, and academic leadership.
-                Expertise in Artificial Intelligence, medical image analysis, and cloud-based systems.
-                Strong track record in Ph.D. supervision, publications, and development of large-scale academic
-                platforms.
+                Expertise in Artificial Intelligence, medical image analysis, and cloud systems.
             </p>
         </div>
 
         <!-- RESEARCH -->
-        <div class="card p-4">
+        <div class="card p-4" data-aos="fade-up">
             <h5 class="section-title">Research Interests</h5>
             <ul>
                 <li>Artificial Intelligence & Machine Learning</li>
@@ -166,117 +145,81 @@
         </div>
 
         <!-- EDUCATION -->
-        <div class="card p-4">
+        <div class="card p-4" data-aos="fade-up">
             <h5 class="section-title">Education</h5>
             <ul>
-                <li>Ph.D., Computer Science & Engineering, Tezpur University, 2018</li>
-                <li>M.Tech., Information Technology, Tezpur University, 2005</li>
-                <li>M.Sc., Mathematics, Tezpur University, 2003</li>
-                <li>PGDCA, Gauhati University, 2001</li>
-                <li>B.Sc. (Hons), Mathematics, Gauhati University, 1998</li>
+                <li>Ph.D., CSE, Tezpur University (2018)</li>
+                <li>M.Tech., IT, Tezpur University (2005)</li>
+                <li>M.Sc., Mathematics (2003)</li>
+                <li>PGDCA (2001)</li>
+                <li>B.Sc. Mathematics (1998)</li>
             </ul>
         </div>
 
         <!-- EXPERIENCE -->
-        <div class="card p-4">
+        <div class="card p-4" data-aos="fade-up">
             <h5 class="section-title">Academic Experience</h5>
-            <p><strong>Sikkim Manipal Institute of Technology (SMIT)</strong></p>
             <ul>
-                <li>Assistant Professor (Selection Grade): 2020–2025</li>
-                <li>Assistant Professor-I: 2017–2020</li>
-                <li>Lecturer / Assistant Professor-II: 2005–2017</li>
+                <li>Assistant Professor (Selection Grade), SMIT (2020–2025)</li>
+                <li>Assistant Professor-I (2017–2020)</li>
+                <li>Lecturer (2005–2017)</li>
             </ul>
         </div>
 
-        <!-- RESEARCH SUPERVISION -->
-        <div class="card p-4">
-            <h5 class="section-title">Research Supervision</h5>
-            <p><strong>Ph.D. Scholar:</strong> Ashis Datta (Ongoing)</p>
-            <p>Topic: Computer-Aided Prediction of Brain-Related Diseases using Radiology Images</p>
-            <p>Status: Thesis under submission</p>
-        </div>
-
         <!-- PROJECTS -->
-        <div class="card p-4">
+        <div class="card p-4" data-aos="fade-up">
             <h5 class="section-title">Key Projects</h5>
             <ul>
                 <li>Online Proctored Examination System (5000+ users)</li>
                 <li>Online Admission System</li>
-                <li>Learning Management System</li>
-                <li>Student Information System</li>
+                <li>LMS & Student Information System</li>
             </ul>
         </div>
 
         <!-- PUBLICATIONS -->
-        <div class="card p-4">
+        <div class="card p-4" data-aos="fade-up">
             <h5 class="section-title">Publications</h5>
 
             <h6>Journal Papers</h6>
             <ol>
-                <li><strong>Rustam Ali Ahmed</strong>, Bhogeswar Borah, “Triangle Wise Mapping Technique to Transform
-                    One Face Image into Another Face Image,” International Journal of Computer Applications, vol. 87,
-                    no. 6, pp. 1–8, 2014.</li>
-
-                <li><strong>Rustam Ali Ahmed</strong>, Bhogeswar Borah, “An Iterative Search-Based Technique to Find or
-                    Predict Older Face Images of a Child,” International Journal of Computer Applications, vol. 151, pp.
-                    1–6, 2016.</li>
-
-                <li>Shubhraleena Chowdhury, <strong>Rustam Ali Ahmed</strong> et al., “Study on the Impact of Internet
-                    Technologies in Medical Science,” 2015.</li>
-
-                <li>Shrija Sanjana, <strong>Rustam Ali Ahmed</strong> et al., “Comparative Studies on Iris Recognition
-                    System,” 2016.</li>
-
-                <li>Pritikana Sen, <strong>Rustam Ali Ahmed</strong> et al., “A Study on E-Commerce Security Issues and
-                    Solutions,” 2015.</li>
+                <li><strong>Rustam Ali Ahmed</strong>, “Triangle Wise Mapping Technique…”, IJCA, 2014</li>
+                <li><strong>Rustam Ali Ahmed</strong>, “Iterative Search-Based Technique…”, IJCA, 2016</li>
+                <li>Chowdhury et al., 2015</li>
+                <li>Sanjana et al., 2016</li>
+                <li>Sen et al., 2015</li>
             </ol>
 
-            <h6>Conference / Book Chapters</h6>
+            <h6>Conference Papers</h6>
             <ol start="6">
-                <li><strong>Rustam Ali Ahmed</strong>, B. Borah et al., HIMIC: A Hierarchical Mixed-Type Data
-                    Clustering.</li>
-
-                <li>Ashis Datta, <strong>Rustam Ali Ahmed</strong> et al., “PIRNet: Deep Neural Network for Brain MRI
-                    Segmentation,” ASCIS 2024.</li>
-
-                <li>Ashis Datta, <strong>Rustam Ali Ahmed</strong> et al., “Alzheimer Disease Detection using
-                    MobileNetV2 Integrated with Vision Transformer,” ICMEET 2024.</li>
-
-                <li>Ashis Datta, <strong>Rustam Ali Ahmed</strong> et al., “Automated Multi-Class Brain Glioma
-                    Segmentation,” ICDSC 2024.</li>
-
-                <li>Ashis Datta, <strong>Rustam Ali Ahmed</strong> et al., “SLesionNet: Transformer-Based Stroke Lesion
-                    Segmentation,” SCI Journal (Under Review 2026).</li>
+                <li>HIMIC – Data Clustering</li>
+                <li>PIRNet – Brain MRI</li>
+                <li>Alzheimer Detection</li>
+                <li>Glioma Segmentation</li>
+                <li>SLesionNet (SCI Under Review)</li>
             </ol>
 
         </div>
 
         <!-- SKILLS -->
-        <div class="card p-4">
+        <div class="card p-4" data-aos="fade-up">
             <h5 class="section-title">Technical Skills</h5>
             <div>
                 <span class="badge-skill">Python</span>
                 <span class="badge-skill">Java</span>
-                <span class="badge-skill">C/C++</span>
                 <span class="badge-skill">AWS</span>
                 <span class="badge-skill">Docker</span>
                 <span class="badge-skill">Kubernetes</span>
-                <span class="badge-skill">React</span>
-                <span class="badge-skill">Django</span>
             </div>
         </div>
 
         <!-- AWARDS -->
-        <div class="card p-4">
+        <div class="card p-4" data-aos="fade-up">
             <h5 class="section-title">Awards & Recognition</h5>
             <ul>
                 <li><strong>Dr. T.M.A. Pai Overall Excellence Award (2020)</strong> – Best Employee across constituent
                     colleges of SMU</li>
-
-                <li><strong>Best Employee Award (2020)</strong> – Sikkim Manipal Institute of Technology (SMIT)</li>
-
-                <li><strong>Finalist, National Awards for e-Governance (2020–21)</strong> – Department of Administrative
-                    Reforms & Public Grievances, Government of India</li>
+                <li><strong>Best Employee Award (2020)</strong> – SMIT</li>
+                <li><strong>Finalist, National Awards for e-Governance (2020–21)</strong> – Govt. of India</li>
             </ul>
         </div>
 
@@ -286,6 +229,7 @@
         </div>
 
     </div>
+
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
@@ -304,6 +248,7 @@
             );
         }
     </script>
+
 </body>
 
 </html>

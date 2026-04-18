@@ -9,3 +9,8 @@
 ## Domains
 - cv-dr-rustam-ali-ahmed.vercel.app
 - dr-rustam.rwcs.in
+
+# git push
+git add .
+git commit -m 'updated on 18-4-26'
+git push origin main

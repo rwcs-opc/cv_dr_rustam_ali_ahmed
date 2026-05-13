@@ -2,107 +2,291 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Rustam Ali Ahmed - Academic CV</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Dr. Rustam Ali Ahmed | Full Stack Software Architect & AI Engineer</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- AOS Animation -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: #f4f6f9;
+            background: #0f172a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: #ffffff !important;
+            font-size: 1.2rem;
+        }
+
+        .nav-link {
+            color: #cbd5e1 !important;
+            margin-left: 18px;
             transition: 0.3s;
         }
 
-        .dark-mode {
-            background: #121212;
-            color: #e0e0e0;
+        .nav-link:hover {
+            color: #38bdf8 !important;
         }
 
-        .dark-mode .card {
-            background: #1e1e1e;
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at top right, rgba(56, 189, 248, 0.15), transparent 25%),
+                radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.15), transparent 25%),
+                #0f172a;
+            padding-top: 90px;
         }
 
-        .container {
-            max-width: 1100px;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
         }
 
-        .card {
-            border: none;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            margin-bottom: 20px;
+        .hero h1 span {
+            color: #38bdf8;
         }
 
-        .header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            border-radius: 16px;
-            padding: 30px;
+        .hero p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            line-height: 1.8;
         }
 
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 4px solid white;
+        .hero-img {
+            width: 280px;
+            height: 280px;
             object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 50px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-custom {
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary-custom {
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+        }
+
+        .btn-primary-custom:hover {
+            background: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .btn-outline-custom:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .stats {
+            margin-top: 50px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+
+        .stat-box h2 {
+            font-size: 2rem;
+            color: #38bdf8;
+            font-weight: 800;
+        }
+
+        .section {
+            padding: 90px 0;
         }
 
         .section-title {
-            font-weight: 700;
-            color: #2a5298;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
-        .dark-mode .section-title {
-            color: #90caf9;
+        .section-subtitle {
+            text-align: center;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: auto auto 50px;
         }
 
-        .badge-skill {
-            background: #e3f2fd;
-            margin: 4px;
-            padding: 6px 10px;
-            border-radius: 8px;
-        }
-
-        .social-link {
-            font-weight: 500;
+        .card-custom {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
+            padding: 30px;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.06);
             transition: 0.3s;
         }
 
-        .social-link:hover {
-            color: #ffd54f !important;
-            /* gold hover */
+        .card-custom:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
         }
 
-        .toggle-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 999;
+        .card-custom i {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #38bdf8;
         }
 
-        /* PRINT */
-        @media print {
+        .skill-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.12);
+            color: #38bdf8;
+            padding: 10px 16px;
+            border-radius: 12px;
+            margin: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
 
-            .toggle-btn,
-            .btn {
-                display: none;
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #38bdf8;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            background: #38bdf8;
+            border-radius: 50%;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        .social-icons a {
+            width: 46px;
+            height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: #38bdf8;
+            margin-right: 12px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-4px);
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        @media(max-width:768px) {
+            .hero {
+                text-align: center;
             }
 
-            body {
-                background: white;
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero-img {
+                margin-top: 40px;
+                width: 220px;
+                height: 220px;
             }
         }
     </style>
@@ -110,206 +294,902 @@
 
 <body>
 
-    <div class="container mt-4">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Dr. Rustam Ali Ahmed</a>
 
-        <!-- HEADER -->
-        <div class="header d-flex flex-column flex-md-row align-items-center">
-            <img src="images/passport-raa.png" class="profile-img me-md-4 mb-3 mb-md-0">
-            <div>
-                <h2>Dr. Rustam Ali Ahmed</h2>
-                <p>Ph.D. (Computer Science & Engineering)</p>
-                <p>Director – RWorld Computer Solutions (OPC) Pvt.
-                    Ltd.
-                    <a href="https://rwcs.in" target="_blank" rel="noopener noreferrer"
-                        style="margin-left:6px; color:#faf7f7; text-decoration:none;" title="Visit Website">
-                        ↗
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#expertise">Expertise</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+
+                    <h1>
+                        Full Stack Software Architect &
+                        <span>AI Engineer</span>
+                    </h1>
+
+                    <p class="mt-4">
+                        Dr. Rustam Ali Ahmed is a Full Stack Software Architect &
+                        Senior Developer with 19+ years of experience designing
+                        scalable enterprise systems, AI-powered platforms,
+                        cloud-native applications, and production-grade infrastructure.
+                    </p>
+
+                    <div class="mt-4 d-flex flex-wrap gap-3">
+
+                        <a href="cv.pdf" class="btn btn-custom btn-primary-custom">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+
+                        <a href="https://github.com/rustamtu" target="_blank" class="btn btn-custom btn-outline-custom">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/dr-rustam-ahmed-61938949" target="_blank"
+                            class="btn btn-custom btn-outline-custom">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+
+                    </div>
+
+                    <!-- STATS -->
+                    <div class="row stats g-4">
+
+                        <div class="col-md-4">
+                            <div class="stat-box">
+                                <h2>19+</h2>
+                                <p>Years Experience</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="stat-box">
+                                <h2>5000+</h2>
+                                <p>Active Users Served</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="stat-box">
+                                <h2>15+</h2>
+                                <p>Enterprise Systems</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5 text-center">
+
+                    <img src="images/passport-raa.png" alt="Dr. Rustam Ali Ahmed" class="hero-img">
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="container">
+
+            <h2 class="section-title">About Me</h2>
+
+            <p class="section-subtitle">
+                Expert in scalable software architecture, cloud infrastructure,
+                AI integrations, Linux production systems, and enterprise application development.
+            </p>
+
+            <div class="row g-4">
+
+                <div class="col-md-6">
+                    <div class="card-custom">
+
+                        <i class="fas fa-code"></i>
+
+                        <h4>Software Engineering</h4>
+
+                        <p>
+                            Extensive expertise in MERN Stack, Laravel,
+                            Python, Django, REST APIs, and distributed systems.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card-custom">
+
+                        <i class="fas fa-server"></i>
+
+                        <h4>Cloud & DevOps</h4>
+
+                        <p>
+                            Hands-on experience with AWS, Azure, GCP,
+                            Docker, Kubernetes, Nginx, Apache, CI/CD,
+                            and Linux infrastructure management.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise" class="section">
+        <div class="container">
+
+            <h2 class="section-title">Core Expertise</h2>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+                    <div class="card-custom">
+                        <i class="fas fa-layer-group"></i>
+                        <h4>MERN Stack Development</h4>
+                        <p>
+                            Full-stack applications using React, Node.js,
+                            Express.js, and MongoDB.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card-custom">
+                        <i class="fas fa-brain"></i>
+                        <h4>Generative AI Integrations</h4>
+                        <p>
+                            AI chat systems, LLM APIs,
+                            AI-assisted development, and automation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card-custom">
+                        <i class="fas fa-cloud"></i>
+                        <h4>Cloud Architecture</h4>
+                        <p>
+                            Production deployments, scaling,
+                            load balancing, and distributed systems.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <div class="container">
+
+            <h2 class="section-title">Featured Projects</h2>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h4>Online Proctored Examination System</h4>
+                            <p>
+                                Enterprise-level examination platform serving
+                                5000+ concurrent users during COVID period.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h4>Learning Management System</h4>
+                            <p>
+                                Cloud-based LMS platform with integrated
+                                academic workflow and student management.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h4>AI Rainfall Prediction System</h4>
+                            <p>
+                                AI-powered predictive modeling system
+                                for environmental and weather analysis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+        <div class="container">
+
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="timeline mt-5">
+
+                <div class="timeline-item">
+                    <h4>Director & Full Stack Software Architect</h4>
+                    <h6>RWORLD COMPUTER SOLUTIONS (OPC) PRIVATE LIMITED</h6>
+                    <small>2020 – Present</small>
+
+                    <p class="mt-3">
+                        Architected and deployed enterprise-scale systems,
+                        cloud-native infrastructure, and AI-enabled platforms.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Lead Technologist</h4>
+                    <h6>ContexQ Pte Ltd</h6>
+                    <small>2024 – 2025</small>
+
+                    <p class="mt-3">
+                        Led scalable backend architecture and digital product engineering.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Assistant Professor – Information Technology</h4>
+                    <h6>Sikkim Manipal Institute of Technology</h6>
+                    <small>2005 – 2025</small>
+
+                    <p class="mt-3">
+                        Teaching, mentoring, software engineering,
+                        and institutional technology leadership.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <div class="container">
+
+            <h2 class="section-title">Technical Skills</h2>
+
+            <div class="text-center mt-5">
+
+                <span class="skill-badge">React.js</span>
+                <span class="skill-badge">Next.js</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Express.js</span>
+                <span class="skill-badge">Laravel</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Django</span>
+                <span class="skill-badge">MongoDB</span>
+                <span class="skill-badge">MySQL</span>
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">Kubernetes</span>
+                <span class="skill-badge">AWS</span>
+                <span class="skill-badge">Azure</span>
+                <span class="skill-badge">GCP</span>
+                <span class="skill-badge">Nginx</span>
+                <span class="skill-badge">Apache</span>
+                <span class="skill-badge">CI/CD</span>
+                <span class="skill-badge">Generative AI</span>
+                <span class="skill-badge">REST APIs</span>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WORK & PROJECTS -->
+    <section id="projects" class="section">
+        <div class="container">
+
+            <h2 class="section-title">Work & Projects</h2>
+
+            <p class="section-subtitle">
+                Real solutions delivered across education, enterprise software,
+                AI systems, automation, and digital transformation.
+            </p>
+
+            <div class="row g-4">
+
+                <!-- PROJECT 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-success mb-3">
+                                ✓ Completed
+                            </span>
+
+                            <h4>RWCS Official Website</h4>
+
+                            <p class="text-info mb-2">
+                                Corporate Website
+                            </p>
+
+                            <p>
+                                Modern responsive company website designed
+                                for branding, lead generation, and digital presence.
+                            </p>
+
+                            <p class="small text-secondary">
+                                Premium business website experience
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">Next.js</span>
+                                <span class="skill-badge">React</span>
+                                <span class="skill-badge">Tailwind CSS</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20RWCS%20Official%20Website&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22RWCS%20Official%20Website%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-success mb-3">
+                                ✓ Completed
+                            </span>
+
+                            <h4>Career Programs Portal</h4>
+
+                            <p class="text-info mb-2">
+                                Training Platform
+                            </p>
+
+                            <p>
+                                Internship and career program application portal
+                                with candidate workflow automation.
+                            </p>
+
+                            <p class="small text-secondary">
+                                Smart candidate onboarding system
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">Laravel</span>
+                                <span class="skill-badge">MySQL</span>
+                                <span class="skill-badge">Bootstrap</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20Career%20Programs%20Portal&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22Career%20Programs%20Portal%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-success mb-3">
+                                ✓ Completed
+                            </span>
+
+                            <h4>SmartERP</h4>
+
+                            <p class="text-info mb-2">
+                                Enterprise Software
+                            </p>
+
+                            <p>
+                                Integrated management system for HR, finance,
+                                operations, and organizational workflow.
+                            </p>
+
+                            <p class="small text-secondary">
+                                Unified business operations platform
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">Laravel</span>
+                                <span class="skill-badge">React</span>
+                                <span class="skill-badge">MySQL</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20SmartERP&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22SmartERP%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-success mb-3">
+                                ✓ Completed
+                            </span>
+
+                            <h4>SmartSIS</h4>
+
+                            <p class="text-info mb-2">
+                                Education ERP
+                            </p>
+
+                            <p>
+                                Student information system managing records,
+                                attendance, performance, and administration.
+                            </p>
+
+                            <p class="small text-secondary">
+                                Efficient student lifecycle management
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">Laravel</span>
+                                <span class="skill-badge">API</span>
+                                <span class="skill-badge">MySQL</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20SmartSIS&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22SmartSIS%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-success mb-3">
+                                ✓ Completed
+                            </span>
+
+                            <h4>University Notice Management System</h4>
+
+                            <p class="text-info mb-2">
+                                Institutional Solutions
+                            </p>
+
+                            <p>
+                                Secure centralized notice publishing portal
+                                with category management and APIs.
+                            </p>
+
+                            <p class="small text-secondary">
+                                Fast transparent communication system
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">Laravel</span>
+                                <span class="skill-badge">REST API</span>
+                                <span class="skill-badge">MySQL</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20University%20Notice%20Management%20System&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22University%20Notice%20Management%20System%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-success mb-3">
+                                ✓ Completed
+                            </span>
+
+                            <h4>Online Admission System</h4>
+
+                            <p class="text-info mb-2">
+                                University Solutions
+                            </p>
+
+                            <p>
+                                Complete online admission workflow including
+                                application, screening, merit, and counseling.
+                            </p>
+
+                            <p class="small text-secondary">
+                                End-to-end admission automation
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">PHP</span>
+                                <span class="skill-badge">Laravel</span>
+                                <span class="skill-badge">MySQL</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20Online%20Admission%20System&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22Online%20Admission%20System%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-success mb-3">
+                                ✓ Completed
+                            </span>
+
+                            <h4>Online Proctored Examination System</h4>
+
+                            <p class="text-info mb-2">
+                                Examination Platform
+                            </p>
+
+                            <p>
+                                Scalable remote examination platform with monitoring
+                                and secure assessment workflow.
+                            </p>
+
+                            <p class="small text-secondary">
+                                Remote exams during critical periods
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">Laravel</span>
+                                <span class="skill-badge">Cloud</span>
+                                <span class="skill-badge">MySQL</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20Online%20Proctored%20Examination%20System&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22Online%20Proctored%20Examination%20System%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-warning text-dark mb-3">
+                                ⏳ In Progress
+                            </span>
+
+                            <h4>Student Mobile App</h4>
+
+                            <p class="text-info mb-2">
+                                Mobile Application
+                            </p>
+
+                            <p>
+                                Cross-platform mobile app for notices,
+                                attendance, profile access, and student services.
+                            </p>
+
+                            <p class="small text-secondary">
+                                Android and iOS ready
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">Flutter</span>
+                                <span class="skill-badge">Firebase</span>
+                                <span class="skill-badge">API</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20Student%20Mobile%20App&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22Student%20Mobile%20App%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 9 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-success mb-3">
+                                ✓ Completed
+                            </span>
+
+                            <h4>DataShield AI Chatbot</h4>
+
+                            <p class="text-info mb-2">
+                                AI Solutions
+                            </p>
+
+                            <p>
+                                Fine-tuned AI chatbot for secure role-based
+                                access to organizational information.
+                            </p>
+
+                            <p class="small text-secondary">
+                                Private secure enterprise AI assistant
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">LLM</span>
+                                <span class="skill-badge">FastAPI</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20DataShield%20AI%20Chatbot&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22DataShield%20AI%20Chatbot%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 10 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-success mb-3">
+                                ✓ Completed
+                            </span>
+
+                            <h4>HealthBridge AI</h4>
+
+                            <p class="text-info mb-2">
+                                Healthcare AI
+                            </p>
+
+                            <p>
+                                AI assistant connecting patients with verified
+                                doctors through intelligent matching.
+                            </p>
+
+                            <p class="small text-secondary">
+                                Smart doctor discovery platform
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">API</span>
+                                <span class="skill-badge">AI</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20HealthBridge%20AI&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22HealthBridge%20AI%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 11 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-success mb-3">
+                                ✓ Completed
+                            </span>
+
+                            <h4>World City API</h4>
+
+                            <p class="text-info mb-2">
+                                Open Source API
+                            </p>
+
+                            <p>
+                                Structured global city dataset API for developers,
+                                research, and integrations.
+                            </p>
+
+                            <p class="small text-secondary">
+                                Developer-ready global data service
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">Node.js</span>
+                                <span class="skill-badge">REST API</span>
+                                <span class="skill-badge">MongoDB</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20World%20City%20API&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22World%20City%20API%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 12 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card h-100">
+
+                        <div class="project-content">
+
+                            <span class="badge bg-success mb-3">
+                                ✓ Completed
+                            </span>
+
+                            <h4>Cloud Hosting & DevOps Setup</h4>
+
+                            <p class="text-info mb-2">
+                                Cloud Services
+                            </p>
+
+                            <p>
+                                Production deployment with Docker, Nginx, SSL,
+                                CI/CD pipelines, and server optimization.
+                            </p>
+
+                            <p class="small text-secondary">
+                                Reliable secure scalable infrastructure
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="skill-badge">Docker</span>
+                                <span class="skill-badge">Linux</span>
+                                <span class="skill-badge">Nginx</span>
+                                <span class="skill-badge">GitHub Actions</span>
+                            </div>
+
+                            <a href="https://www.rwcs.in/contact?subject=Demo%20Request%3A%20Cloud%20Hosting%20%26%20DevOps%20Setup&message=Hi%2C%20I%20am%20interested%20in%20a%20demo%20%2F%20discussion%20about%20the%20%22Cloud%20Hosting%20%26%20DevOps%20Setup%22%20project.%20Please%20get%20in%20touch%20to%20schedule%20a%20free%20demo%20call."
+                                target="_blank" class="btn btn-outline-custom btn-custom">
+                                Book Free Demo →
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <div class="container">
+
+            <h2 class="section-title">Contact</h2>
+
+            <p class="section-subtitle">
+                Open for enterprise consulting, software architecture,
+                AI engineering, and technical leadership opportunities.
+            </p>
+
+            <div class="text-center mt-5">
+
+                <div class="social-icons mb-4">
+
+                    <a href="mailto:ahmed.rustam77@gmail.com">
+                        <i class="fas fa-envelope"></i>
                     </a>
-                </p>
-                <p>
-                    <i class="fas fa-map-marker-alt"></i> Assam, India |
-                    <i class="fas fa-phone"></i> +91 7002453818 |
-                    <i class="fas fa-envelope"></i> ahmed.rustam77@gmail.com
-                </p>
-                <div class="contact-info mt-2">
 
-                    <a href="https://www.linkedin.com/in/dr-rustam-ahmed-61938949" target="_blank"
-                        class="me-3 text-white text-decoration-none social-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
+                    <a href="tel:+917002453818">
+                        <i class="fas fa-phone"></i>
                     </a>
 
-                    <a href="https://github.com/rustamtu?tab=repositories" target="_blank"
-                        class="text-white text-decoration-none social-link">
-                        <i class="fab fa-github"></i> GitHub
+                    <a href="https://github.com/rustamtu" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/dr-rustam-ahmed-61938949" target="_blank">
+                        <i class="fab fa-linkedin"></i>
                     </a>
 
                 </div>
-                <a href="#" onclick="window.print()" class="btn btn-light mt-2">
-                    <i class="fas fa-download"></i> Download PDF
-                </a>
+
+                <p>
+                    Guwahati, Assam, India
+                </p>
+
+                <p>
+                    ahmed.rustam77@gmail.com
+                </p>
+
+                <p>
+                    +91 7002453818
+                </p>
+
             </div>
-        </div>
-
-        <!-- SUMMARY -->
-        <div class="card p-4">
-            <h5 class="section-title">Profile Summary</h5>
-            <p>
-                Experienced Computer Science academician with 19+ years of teaching, research, and academic leadership.
-                Expertise in Artificial Intelligence, medical image analysis, and cloud-based systems.
-                Strong track record in Ph.D. supervision, publications, and development of large-scale academic
-                platforms.
-            </p>
-        </div>
-
-        <!-- RESEARCH -->
-        <div class="card p-4">
-            <h5 class="section-title">Research Interests</h5>
-            <ul>
-                <li>Artificial Intelligence & Machine Learning</li>
-                <li>Medical Image Analysis & Biometrics</li>
-                <li>Cloud Computing & Distributed Systems</li>
-                <li>Data Analytics & Smart Systems</li>
-            </ul>
-        </div>
-
-        <!-- EDUCATION -->
-        <div class="card p-4">
-            <h5 class="section-title">Education</h5>
-            <ul>
-                <li>Ph.D., Computer Science & Engineering, Tezpur University, 2018</li>
-                <li>M.Tech., Information Technology, Tezpur University, 2005</li>
-                <li>M.Sc., Mathematics, Tezpur University, 2003</li>
-                <li>PGDCA, Gauhati University, 2001</li>
-                <li>B.Sc. (Hons), Mathematics, Gauhati University, 1998</li>
-            </ul>
-        </div>
-
-        <!-- EXPERIENCE -->
-        <div class="card p-4">
-            <h5 class="section-title">Academic Experience</h5>
-            <p><strong>Sikkim Manipal Institute of Technology (SMIT)</strong></p>
-            <ul>
-                <li>Assistant Professor (Selection Grade): 2020–2025</li>
-                <li>Assistant Professor-I: 2017–2020</li>
-                <li>Lecturer / Assistant Professor-II: 2005–2017</li>
-            </ul>
-        </div>
-
-        <!-- RESEARCH SUPERVISION -->
-        <div class="card p-4">
-            <h5 class="section-title">Research Supervision</h5>
-            <p><strong>Ph.D. Scholar:</strong> Ashis Datta (Ongoing)</p>
-            <p>Topic: Computer-Aided Prediction of Brain-Related Diseases using Radiology Images</p>
-            <p>Status: Thesis under submission</p>
-        </div>
-
-        <!-- PROJECTS -->
-        <div class="card p-4">
-            <h5 class="section-title">Key Projects</h5>
-            <ul>
-                <li>Online Proctored Examination System (5000+ users)</li>
-                <li>Online Admission System</li>
-                <li>Learning Management System</li>
-                <li>Student Information System</li>
-            </ul>
-        </div>
-
-        <!-- PUBLICATIONS -->
-        <div class="card p-4">
-            <h5 class="section-title">Publications</h5>
-
-            <h6>Journal Papers</h6>
-            <ol>
-                <li><strong>Rustam Ali Ahmed</strong>, Bhogeswar Borah, “Triangle Wise Mapping Technique to Transform
-                    One Face Image into Another Face Image,” International Journal of Computer Applications, vol. 87,
-                    no. 6, pp. 1–8, 2014.</li>
-
-                <li><strong>Rustam Ali Ahmed</strong>, Bhogeswar Borah, “An Iterative Search-Based Technique to Find or
-                    Predict Older Face Images of a Child,” International Journal of Computer Applications, vol. 151, pp.
-                    1–6, 2016.</li>
-
-                <li>Shubhraleena Chowdhury, <strong>Rustam Ali Ahmed</strong> et al., “Study on the Impact of Internet
-                    Technologies in Medical Science,” 2015.</li>
-
-                <li>Shrija Sanjana, <strong>Rustam Ali Ahmed</strong> et al., “Comparative Studies on Iris Recognition
-                    System,” 2016.</li>
-
-                <li>Pritikana Sen, <strong>Rustam Ali Ahmed</strong> et al., “A Study on E-Commerce Security Issues and
-                    Solutions,” 2015.</li>
-            </ol>
-
-            <h6>Conference / Book Chapters</h6>
-            <ol start="6">
-                <li><strong>Rustam Ali Ahmed</strong>, B. Borah et al., HIMIC: A Hierarchical Mixed-Type Data
-                    Clustering.</li>
-
-                <li>Ashis Datta, <strong>Rustam Ali Ahmed</strong> et al., “PIRNet: Deep Neural Network for Brain MRI
-                    Segmentation,” ASCIS 2024.</li>
-
-                <li>Ashis Datta, <strong>Rustam Ali Ahmed</strong> et al., “Alzheimer Disease Detection using
-                    MobileNetV2 Integrated with Vision Transformer,” ICMEET 2024.</li>
-
-                <li>Ashis Datta, <strong>Rustam Ali Ahmed</strong> et al., “Automated Multi-Class Brain Glioma
-                    Segmentation,” ICDSC 2024.</li>
-
-                <li>Ashis Datta, <strong>Rustam Ali Ahmed</strong> et al., “SLesionNet: Transformer-Based Stroke Lesion
-                    Segmentation,” SCI Journal (Under Review 2026).</li>
-            </ol>
 
         </div>
+    </section>
 
-        <!-- SKILLS -->
-        <div class="card p-4">
-            <h5 class="section-title">Technical Skills</h5>
-            <div>
-                <span class="badge-skill">Python</span>
-                <span class="badge-skill">Java</span>
-                <span class="badge-skill">C/C++</span>
-                <span class="badge-skill">AWS</span>
-                <span class="badge-skill">Docker</span>
-                <span class="badge-skill">Kubernetes</span>
-                <span class="badge-skill">React</span>
-                <span class="badge-skill">Django</span>
-            </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            © 2026 Dr. Rustam Ali Ahmed | Full Stack Software Architect & AI Engineer
         </div>
+    </footer>
 
-        <!-- AWARDS -->
-        <div class="card p-4">
-            <h5 class="section-title">Awards & Recognition</h5>
-            <ul>
-                <li><strong>Dr. T.M.A. Pai Overall Excellence Award (2020)</strong> – Best Employee across constituent
-                    colleges of SMU</li>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-                <li><strong>Best Employee Award (2020)</strong> – Sikkim Manipal Institute of Technology (SMIT)</li>
-
-                <li><strong>Finalist, National Awards for e-Governance (2020–21)</strong> – Department of Administrative
-                    Reforms & Public Grievances, Government of India</li>
-            </ul>
-        </div>
-
-        <!-- FOOTER -->
-        <div class="text-center text-muted mt-3 mb-5">
-            © 2026 Dr. Rustam Ali Ahmed
-        </div>
-
-    </div>
-    <!-- JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-    <script>
-        AOS.init();
-
-        // Dark Mode Persistence
-        if (localStorage.getItem("theme") === "dark") {
-            document.body.classList.add("dark-mode");
-        }
-
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-            localStorage.setItem("theme",
-                document.body.classList.contains("dark-mode") ? "dark" : "light"
-            );
-        }
-    </script>
 </body>
 
 </html>

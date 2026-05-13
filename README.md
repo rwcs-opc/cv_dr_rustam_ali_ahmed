@@ -12,5 +12,5 @@
 
 # git push
 git add .
-git commit -m 'updated with sw resume on 13-5-26'
+git commit -m 'updated with sw resume on 13-5-26 v2'
 git push origin main

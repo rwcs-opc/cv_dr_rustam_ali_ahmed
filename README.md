@@ -11,6 +11,8 @@
 - dr-rustam.rwcs.in
 
 # git push
-git add .
+
 git commit -m 'updated with sw resume on 13-5-26 v2'
+git add .
+git commit -m 'updated with sw resume on 13-5-26 v2g final'
 git push origin main
